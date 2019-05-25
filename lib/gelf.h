@@ -22,15 +22,15 @@
 #ifndef _GELF_H
 #define _GELF_H
 
-#if __LIBELF_INTERNAL__
+#if defined(__LIBELF_INTERNAL__) && __LIBELF_INTERNAL__
 #include <libelf.h>
 #else /* __LIBELF_INTERNAL__ */
 #include <libelf/libelf.h>
 #endif /* __LIBELF_INTERNAL__ */
 
-#if __LIBELF_NEED_LINK_H
+#if defined(__LIBELF_NEED_LINK_H) && __LIBELF_NEED_LINK_H
 #include <link.h>
-#elif __LIBELF_NEED_SYS_LINK_H
+#elif defined(__LIBELF_NEED_SYS_LINK_H) && __LIBELF_NEED_SYS_LINK_H
 #include <sys/link.h>
 #endif /* __LIBELF_NEED_LINK_H */
 
@@ -71,7 +71,7 @@ typedef Elf64_Sym	GElf_Sym;
 /*
  * Symbol versioning
  */
-#if __LIBELF_SYMBOL_VERSIONS
+#if defined(__LIBELF_SYMBOL_VERSIONS) && __LIBELF_SYMBOL_VERSIONS
 typedef Elf64_Verdef	GElf_Verdef;
 typedef Elf64_Verneed	GElf_Verneed;
 typedef Elf64_Verdaux	GElf_Verdaux;

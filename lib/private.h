@@ -90,9 +90,9 @@ extern void *_elf_memset();
 # define nlist __override_nlist_declaration
 #endif /* HAVE_STRUCT_NLIST_DECLARATION */
 
-#if __LIBELF_NEED_LINK_H
+#if defined(__LIBELF_NEED_LINK_H) && __LIBELF_NEED_LINK_H
 # include <link.h>
-#elif __LIBELF_NEED_SYS_LINK_H
+#elif defined(__LIBELF_NEED_SYS_LINK_H) && __LIBELF_NEED_SYS_LINK_H
 # include <sys/link.h>
 #endif /* __LIBELF_NEED_LINK_H */
 
